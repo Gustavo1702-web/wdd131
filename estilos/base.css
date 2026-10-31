@@ -1,0 +1,244 @@
+:root {
+  --marinho: #1d4f73;
+  --grafite: #2f2f2f;
+  --azul-claro: #eaf1f6;
+  --ambar: #f2b134;
+  --amarelo-data: #ffe66d;
+  --tinta: #1b2733;
+  --link: #0b4f8a;
+  --branco: #ffffff;
+  --fonte-titulo: Georgia, "Times New Roman", serif;
+  --fonte-texto: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-texto);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--tinta);
+  background-color: var(--branco);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--ambar);
+  outline-offset: 3px;
+}
+
+/* Cabeçalho: faixa azul com o título e faixa grafite com a navegação */
+header {
+  background-color: var(--marinho);
+  color: var(--branco);
+  text-align: center;
+  padding-top: 1rem;
+}
+
+header img {
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+
+#titulo-curso {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 0 1rem 1rem;
+}
+
+/* Navegação com Flexbox */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 0.25rem 1rem;
+  background-color: var(--grafite);
+  padding: 0.5rem 1rem;
+}
+
+nav a {
+  position: relative;
+  color: var(--branco);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+/* Linha âmbar que cresce do centro para as bordas */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.15rem;
+  width: 0;
+  height: 3px;
+  background-color: var(--ambar);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--ambar);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+nav a:hover::after,
+nav a:focus-visible::after {
+  width: calc(100% - 2rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  nav a,
+  nav a::after {
+    transition: none;
+  }
+}
+
+/* Conteúdo principal: largura limitada, centralizado e cards em Grid */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+h1 {
+  grid-column: 1 / -1;
+  font-family: var(--fonte-titulo);
+  font-size: 2.4rem;
+  font-weight: normal;
+  text-align: center;
+  color: var(--tinta);
+  margin: 0.5rem 0;
+}
+
+.card {
+  border: 1px solid #c4ccd2;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--branco);
+}
+
+.card h2 {
+  margin: 0;
+  padding: 0.6rem 1rem;
+  background-color: var(--marinho);
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.card-corpo {
+  padding: 1rem 1.25rem 1.25rem;
+  display: flow-root; /* contém as imagens flutuantes */
+}
+
+.card-corpo p {
+  margin: 0 0 1rem;
+}
+
+/* Foto à direita do texto */
+.foto {
+  float: right;
+  max-width: 40%;
+  height: auto;
+  margin: 0 0 0.75rem 1rem;
+  border: 1px solid #c4ccd2;
+}
+
+.card h3 {
+  clear: both;
+  width: fit-content;
+  min-width: 70%;
+  margin: 1rem auto 1rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #c4ccd2;
+  font-family: var(--fonte-titulo);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Bandeira à esquerda com legenda */
+figure {
+  float: left;
+  width: 160px;
+  max-width: 45%;
+  margin: 0 1rem 0.5rem 0;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #c4ccd2;
+}
+
+figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Ilustração do segundo card */
+.ilustracao {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 1rem;
+  border-radius: 4px;
+}
+
+/* Lista de recursos */
+.card ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.card li {
+  margin: 0.4rem 0;
+}
+
+.card a {
+  color: var(--link);
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--marinho);
+  color: var(--branco);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.95rem;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+#ultimaModificacao {
+  color: var(--amarelo-data);
+  font-size: 0.85rem;
+}
+
+/* Telas estreitas: cards empilhados */
+@media (max-width: 700px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+}

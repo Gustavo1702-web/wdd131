@@ -1,11 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD 131 – Fundamentos da Web Dinâmica - Gustavo Rodrigues</title>
+  <meta name="description" content="WDD 131 – Fundamentos da Web Dinâmica. Página inicial de Gustavo Rodrigues, estudante de desenvolvimento de software: HTML, CSS, JavaScript, recursos para desenvolvedores e informações sobre minha cidade.">
+  <meta name="author" content="Edison Gustavo Rodrigues da Silva">
+  <link rel="stylesheet" href="estilos/base.css">
+  <script src="scripts/obterdatas.js" defer></script>
 </head>
 <body>
+  <header>
+    <span id="titulo-curso">WDD131 – Fundamentos da Web Dinâmica</span>
+    <nav aria-label="Navegação principal">
+      <a href="www.linkedin.com/in/gustavo-rodrigues-4a1b3b2b5" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/2?lang=por&id=p41#41" target="_blank" rel="noopener">Escritura</a>
+      <a href="#projeto-final">Projeto Final</a>
+    </nav>
+  </header>
+
+  <main>
     <h1>Gustavo Rodrigues</h1>
+
+    <section class="card">
+      <h2>Sobre mim</h2>
+      <div class="card-corpo">
+       <img class="foto" src="imagens/foto-perfil.jpg" alt="Retrato de Gustavo Rodrigues, sorrindo, de blazer azul-marinho e camisa branca" width="150" height="188">
+        <p>Meu nome é Gustavo Rodrigues e meus amigos me chamam de Gustavo. Moro com minha família em São José dos Campos, São Paulo. Estou estudando desenvolvimento de software e adoro transformar ideias em programas que funcionam. Nas horas livres, gosto de jogar bola  e passar tempo com as pessoas que amo assistindo séries.</p>
+
+        <h3>São José dos Campos, Brasil</h3>
+
+        <figure>
+          <img src="imagens/bandeira.svg" alt="Bandeira do Brasil: retângulo verde com um losango amarelo e um círculo azul" width="160" height="112" loading="lazy">
+          <figcaption>Bandeira do Brasil</figcaption>
+        </figure>
+        <p>O Brasil é o maior país da América do Sul e abriga a maior parte da floresta amazônica. São José dos Campos fica no Vale do Paraíba, no interior de São Paulo, e é conhecida pela indústria aeroespacial e por centros de tecnologia e pesquisa.</p>
+      </div>
+    </section>
+
+     <section class="card" id="projeto-final">
+      <h2>O que já aprendi sobre web</h2>
+      <div class="card-corpo">
+        <img class="ilustracao" src="imagens/aprendizado.svg" alt="Ilustração de uma página web com marcações HTML, estilos CSS e um trecho de JavaScript" width="240" height="180" loading="lazy">
+        <ul>
+          <li><strong>HTML:</strong> estrutura de página, elementos semânticos (header, nav, main, section, footer) e metadados no head.</li>
+          <li><strong>CSS:</strong> layout com Flexbox e Grid, variáveis, efeitos de hover e design responsivo.</li>
+          <li><strong>JavaScript:</strong> o atributo defer, o objeto Date e a propriedade lastModified para gerar conteúdo dinâmico.</li>
+          <li><strong>Ferramentas:</strong> Live Server, DevTools, Lighthouse, Git e GitHub.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="anoatual"></span> Gustavo Rodrigues | Brasil</p>
+    <p id="ultimaModificacao"></p>
+  </footer>
 </body>
 </html>
