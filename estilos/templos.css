@@ -1,0 +1,148 @@
+/* ===== Variáveis: esquema de cores e fontes ===== */
+:root {
+    --tinta: #1c2a39;
+    --pedra: #eceff2;
+    --branco: #ffffff;
+    --dourado: #d9b45a;
+    --texto: #1f2933;
+    --fonte-titulo: "Spectral", Georgia, serif;
+    --fonte-corpo: "Work Sans", Arial, sans-serif;
+}
+
+/* ===== Base ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--texto);
+    background-color: var(--pedra);
+}
+
+/* ===== Cabeçalho e navegação (mobile) ===== */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: var(--tinta);
+    color: var(--branco);
+}
+
+.titulo-site {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Botão hambúrguer: visível apenas no mobile */
+#menu {
+    display: block;
+    padding: 0.25rem 0.75rem;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--branco);
+    background: none;
+    border: 2px solid var(--dourado);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#menu:hover,
+#menu:focus-visible {
+    background-color: var(--dourado);
+    color: var(--tinta);
+}
+
+/* Menu: escondido por padrão no mobile, aparece com a classe "open" */
+nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.75rem;
+}
+
+nav.open {
+    display: flex;
+}
+
+nav a {
+    padding: 0.75rem 1rem;
+    color: var(--branco);
+    text-decoration: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background-color: var(--dourado);
+    color: var(--tinta);
+}
+
+/* ===== Conteúdo principal ===== */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1 {
+    margin: 1rem 0;
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    color: var(--tinta);
+    text-align: center;
+}
+
+/* Grade: 1 coluna no mobile */
+.galeria {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+figure {
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--branco);
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(28, 42, 57, 0.2);
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 8 / 5;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+figure:hover img {
+    transform: scale(1.04);
+}
+
+figcaption {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    text-align: center;
+    border-top: 3px solid var(--dourado);
+}
+
+/* ===== Rodapé ===== */
+footer {
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--tinta);
+    color: var(--branco);
+}
+
+footer p {
+    margin: 0.25rem 0;
+}

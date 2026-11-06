@@ -1,0 +1,45 @@
+/* Visualização maior (a partir de 700px, definido no media do <link> no HTML) */
+
+/* Esconde o botão hambúrguer */
+#menu {
+    display: none;
+}
+
+header {
+    flex-wrap: nowrap;
+    padding: 1rem 2rem;
+}
+
+/* Menu sempre visível, em linha com CSS Flex */
+nav {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    margin-top: 0;
+    gap: 0.25rem;
+}
+
+nav a {
+    padding: 0.5rem 1rem;
+    border-top: none;
+    border-radius: 4px;
+}
+
+main {
+    max-width: 900px;
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+
+/* Grade de 3 colunas na visualização maior */
+.galeria {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+figcaption {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
