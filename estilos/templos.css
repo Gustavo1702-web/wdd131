@@ -23,34 +23,10 @@ body {
     background-color: var(--pedra);
 }
 
-/* ===== Cabeçalho e navegação (mobile) ===== */
-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    background-color: var(--tinta);
-    color: var(--branco);
-}
-
 .titulo-site {
     font-family: var(--fonte-titulo);
     font-size: 1.5rem;
     font-weight: 700;
-}
-
-/* Botão hambúrguer: visível apenas no mobile */
-#menu {
-    display: block;
-    padding: 0.25rem 0.75rem;
-    font-size: 1.75rem;
-    line-height: 1;
-    color: var(--branco);
-    background: none;
-    border: 2px solid var(--dourado);
-    border-radius: 4px;
-    cursor: pointer;
 }
 
 #menu:hover,
@@ -59,52 +35,14 @@ header {
     color: var(--tinta);
 }
 
-/* Menu: escondido por padrão no mobile, aparece com a classe "open" */
-nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 0.75rem;
-}
-
 nav.open {
     display: flex;
-}
-
-nav a {
-    padding: 0.75rem 1rem;
-    color: var(--branco);
-    text-decoration: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    transition: background-color 0.2s, color 0.2s;
 }
 
 nav a:hover,
 nav a:focus-visible {
     background-color: var(--dourado);
     color: var(--tinta);
-}
-
-/*  Conteúdo principal  */
-main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-h1 {
-    margin: 1rem 0;
-    font-family: var(--fonte-titulo);
-    font-size: 2rem;
-    color: var(--tinta);
-    text-align: center;
-}
-
-/* Grade: 1 coluna no mobile */
-.galeria {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
 }
 
 figure {
@@ -128,13 +66,6 @@ figure:hover img {
     transform: scale(1.04);
 }
 
-figcaption {
-    padding: 0.75rem 1rem;
-    font-weight: 600;
-    text-align: center;
-    border-top: 3px solid var(--dourado);
-}
-
 /* ===== Rodapé ===== */
 footer {
     padding: 1rem;
@@ -145,4 +76,44 @@ footer {
 
 footer p {
     margin: 0.25rem 0;
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-wrap: nowrap;
+    padding: 1rem 2rem;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    margin-top: 0;
+  }
+
+  nav a {
+    padding: 0.5rem 1rem;
+    border-top: none;
+  }
+
+  main {
+    max-width: 900px;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  .galeria {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  figcaption {
+    padding: 0.5rem;
+  }
 }
