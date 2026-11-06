@@ -85,7 +85,7 @@ nav a:focus-visible {
     color: var(--tinta);
 }
 
-/* ===== Conteúdo principal ===== */
+/*  Conteúdo principal  */
 main {
     max-width: 1100px;
     margin: 0 auto;

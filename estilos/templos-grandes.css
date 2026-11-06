@@ -1,6 +1,6 @@
 /* Visualização maior (a partir de 700px, definido no media do <link> no HTML) */
 
-/* Esconde o botão hambúrguer */
+/* Esconde o botão hamburguer */
 #menu {
     display: none;
 }

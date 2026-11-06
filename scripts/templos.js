@@ -3,7 +3,7 @@ document.querySelector("#anoatual").textContent = new Date().getFullYear();
 document.querySelector("#ultimaModificacao").textContent =
     new Date(document.lastModified).toLocaleString("pt-BR");
 
-// ===== Menu hambúrguer =====
+// ===== Menu hamburguer =====
 const botaoMenu = document.querySelector("#menu");
 const menuNav = document.querySelector("#menu-nav");
 
