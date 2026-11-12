@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local | Brasil</title>
+  <meta name="description" content="Dados e clima do Brasil.">
+ <meta name="author" content="Edison Gustavo Rodrigues da Silva">
+  <link rel="stylesheet" href="estilos/local.css">
+  <link rel="stylesheet" href="estilos/local-grandes.css" media="(min-width: 700px)">
+  <script src="scripts/local.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Brasil</h1>
+  </header>
+
+  <main>
+    <picture class="principal">
+      <source media="(min-width: 700px)" srcset="imagens/paisagem-praia-grande.webp" width="1200" height="600">
+      <img src="imagens/paisagem-praia.webp" width="400" height="600" alt="Paisagem de praia" fetchpriority="high">
+    </picture>
+
+    <section class="dados">
+      <h2>Dados</h2>
+      <dl>
+        <dt>Área:</dt><dd>8.515.767 km²</dd>
+        <dt>População:</dt><dd>203.062.512</dd>
+        <dt>Capital:</dt><dd>Brasília</dd>
+        <dt>Idioma:</dt><dd>Português</dd>
+        <dt>Moeda:</dt><dd>Real brasileiro</dd>
+        <dt>Fuso horário:</dt><dd>UTC-3</dd>
+        <dt>Código de discagem:</dt><dd>+55</dd>
+        <dt>Domínio de internet:</dt><dd>.br</dd>
+      </dl>
+    </section>
+
+    <section class="clima">
+      <h2>Clima</h2>
+      <img class="icone-clima" src="imagens/clima.svg" width="48" height="48" alt="Parcialmente nublado">
+      <dl>
+        <dt>Temperatura:</dt><dd><span id="temperatura"></span> °C</dd>
+        <dt>Condição:</dt><dd>Parcialmente nublado</dd>
+        <dt>Vento:</dt><dd><span id="vento"></span> km/h</dd>
+        <dt>Sensação térmica:</dt><dd id="sensacao"></dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="anoatual"></span> | Gustavo Rodrigues | Brasil</p>
+    <p id="ultimaModificacao"></p>
+  </footer>
+</body>
+</html>
