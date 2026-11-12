@@ -5,6 +5,8 @@
   --branco: #ffffff;
   --fundo: #e3f1e6;
   --texto: #1b1b1b;
+  --cartao: #ffffffeb;
+  --sombra: #0000004d;
   --fonte-titulo: "Trebuchet MS", "Segoe UI", sans-serif;
   --fonte-texto: "Segoe UI", Roboto, Arial, sans-serif;
   --espaco: 1rem;
@@ -12,47 +14,53 @@
 
 * { box-sizing: border-box; }
 
+/* Visualização estreita: coluna única centralizada */
 body {
   margin: 0;
   font-family: var(--fonte-texto);
   color: var(--texto);
   background: var(--fundo);
   line-height: 1.5;
+  text-align: center;
 }
 
-/* Visualização estreita: coluna única centralizada */
-header, main, footer {
+body > * {
   max-width: 420px;
   margin-inline: auto;
 }
 
-header {
+header, footer {
   background: var(--azul);
   color: var(--branco);
   padding: var(--espaco);
-  text-align: center;
-  border-bottom: 6px solid var(--verde);
+  font-size: 0.9rem;
 }
 
-h1, h2 { font-family: var(--fonte-titulo); margin: 0; }
-h1 { font-size: 1.5rem; }
+body > header { border-bottom: 6px solid var(--verde); }
+
+h1, h2 {
+  font-family: var(--fonte-titulo);
+  margin: 0;
+}
+
+header h1 { font-size: 1.5rem; }
 
 main { background: var(--branco); }
 
-.principal, .principal img {
+.principal img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-section {
-  padding: var(--espaco);
-  text-align: center;
-}
+section { padding: var(--espaco); }
 
 section + section { border-top: 1px solid #d8d8d8; }
 
-section h2 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
 
 /* Rótulos à direita (negrito), valores à esquerda */
 dl {
@@ -62,18 +70,22 @@ dl {
   margin: 0;
   font-size: 0.9rem;
 }
-dt { font-weight: bold; text-align: right; }
-dd { margin: 0; text-align: left; }
 
-.icone-clima { display: block; margin: 0 auto 0.75rem; }
+dt {
+  font-weight: bold;
+  text-align: right;
+}
 
-footer {
-  background: var(--azul);
-  color: var(--branco);
-  text-align: center;
-  padding: var(--espaco);
-  font-size: 0.9rem;
+dd {
+  margin: 0;
+  text-align: left;
+}
+
+.icone-clima {
+  display: block;
+  margin: 0 auto 0.75rem;
 }
 
 footer p { margin: 0.2rem 0; }
+
 footer a { color: var(--amarelo); }
